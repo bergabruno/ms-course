@@ -22,6 +22,5 @@ public class PaymentController {
         Payment payment = paymentService.getPayment(workerId, days);
 
         return ResponseEntity.ok(payment);
-
     }
 }
