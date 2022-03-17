@@ -2,6 +2,7 @@ package com.devsuperior.hrworker.controller;
 
 import com.devsuperior.hrworker.entites.Worker;
 import com.devsuperior.hrworker.repositories.WorkerRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/workers")
+@Log4j2
 public class WorkerController {
 
     @Autowired
@@ -32,6 +34,9 @@ public class WorkerController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Worker> findById(@PathVariable Long id){
+
+        log.info("port=" + env.getProperty("local.server.port"));
+
         Optional<Worker> worker = workerRepository.findById(id);
 
         return ResponseEntity.ok(worker.get());

@@ -56,7 +56,6 @@
             <version>${spring.cloud.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-ribbon -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
@@ -64,8 +63,9 @@
         </dependency>
 
 
-    </dependencies>
 
+
+    </dependencies>
 
     <build>
         <plugins>
