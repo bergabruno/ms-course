@@ -3,6 +3,7 @@ package com.devsuperior.hrworker.controller;
 import com.devsuperior.hrworker.entites.Worker;
 import com.devsuperior.hrworker.repositories.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/workers")
 public class WorkerController {
+
+    @Autowired
+    private Environment env;
 
     @Autowired
     private WorkerRepository workerRepository;
